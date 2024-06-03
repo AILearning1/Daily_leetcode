@@ -1,0 +1,16 @@
+class Solution:
+    def distributeCandies(self, candies: int, num_people: int) -> List[int]:
+        list_a = [0] * num_people
+        i = 0
+        cout = 1
+        while candies > 0:
+            if candies >= cout:
+                list_a[i] = list_a[i] + cout
+            else:
+                list_a[i] = list_a[i] + candies
+            candies = candies - cout
+            cout = cout + 1
+            i = i + 1
+            if i == num_people:
+                i = 0
+        return list_a 
